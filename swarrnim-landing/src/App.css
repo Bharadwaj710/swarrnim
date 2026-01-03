@@ -12,6 +12,8 @@
   --gradient-quantum: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
 }
 
+
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   background: var(--dark);
@@ -20,9 +22,13 @@ body {
   overflow-x: hidden;
 }
 
+
+
 .App {
   padding-bottom: 80px;
 }
+
+
 
 .container {
   max-width: 1200px;
@@ -30,10 +36,14 @@ body {
   padding: 0 2rem;
 }
 
+
+
 .section {
   padding: 5rem 0;
   position: relative;
 }
+
+
 
 .section-title {
   font-size: 2.5rem;
@@ -46,6 +56,8 @@ body {
   background-clip: text;
 }
 
+
+
 .section-intro {
   text-align: center;
   color: var(--text-light);
@@ -54,10 +66,124 @@ body {
   font-size: 1.1rem;
 }
 
+
+
 .section-text {
   text-align: center;
   color: var(--text-light);
   max-width: 800px;
   margin: 2rem auto 0;
   font-size: 1rem;
+}
+
+
+
+/* Recognition Section Card Titles - Even Larger Text */
+section#recognitions h4,
+section#recognitions .card-title,
+#recognitions h4,
+#recognitions .card-title,
+#recognitions .recognition-card h4,
+#recognitions .recognition-card .card-title {
+  font-size: 17px !important;
+  line-height: 1.4 !important;
+}
+
+
+section#recognitions p,
+section#recognitions .card-description,
+#recognitions p,
+#recognitions .card-description,
+#recognitions .recognition-card p,
+#recognitions .recognition-card .card-description {
+  font-size: 13.5px !important;
+  line-height: 1.5 !important;
+}
+
+
+section#recognitions .badge,
+#recognitions .badge {
+  font-size: 12px !important;
+}
+
+
+
+/* Responsive overrides for Recognition cards */
+@media (max-width: 1024px) {
+  section#recognitions h4,
+  section#recognitions .card-title,
+  #recognitions h4,
+  #recognitions .card-title {
+    font-size: 16px !important;
+  }
+  section#recognitions p,
+  section#recognitions .card-description,
+  #recognitions p,
+  #recognitions .card-description {
+    font-size: 12.5px !important;
+  }
+  section#recognitions .badge,
+  #recognitions .badge {
+    font-size: 11.5px !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  section#recognitions h4,
+  section#recognitions .card-title,
+  #recognitions h4,
+  #recognitions .card-title {
+    font-size: 15px !important;
+  }
+  section#recognitions p,
+  section#recognitions .card-description,
+  #recognitions p,
+  #recognitions .card-description {
+    font-size: 12px !important;
+  }
+  section#recognitions .badge,
+  #recognitions .badge {
+    font-size: 11px !important;
+  }
+}
+
+
+@media (max-width: 576px) {
+  section#recognitions h4,
+  section#recognitions .card-title,
+  #recognitions h4,
+  #recognitions .card-title {
+    font-size: 13.5px !important;
+  }
+  section#recognitions p,
+  section#recognitions .card-description,
+  #recognitions p,
+  #recognitions .card-description {
+    font-size: 11px !important;
+  }
+  section#recognitions .badge,
+  #recognitions .badge {
+    font-size: 10px !important;
+  }
+}
+
+
+@media (max-width: 400px) {
+  section#recognitions h4,
+  section#recognitions .card-title,
+  #recognitions h4,
+  #recognitions .card-title {
+    font-size: 12.5px !important;
+  }
+  section#recognitions p,
+  section#recognitions .card-description,
+  #recognitions p,
+  #recognitions .card-description {
+    font-size: 10.5px !important;
+  }
+  section#recognitions .badge,
+  #recognitions .badge {
+    font-size: 9.5px !important;
+  }
 }
