@@ -244,12 +244,19 @@ function Hero() {
       border: '1px solid rgba(255, 255, 255, 0.25)',
       fontSize: '0.9rem',
       color: '#ffffff',
-      background: 'rgba(255, 255, 255, 0.08)',
-      backdropFilter: 'blur(10px)',
-      WebkitBackdropFilter: 'blur(10px)',
+      
+      // 🔥 CRITICAL FIXES for glassmorphism
+      backgroundColor: 'rgba(255, 255, 255, 0.12)',
+      backdropFilter: 'blur(12px)',
+      WebkitBackdropFilter: 'blur(12px)',
+      backgroundClip: 'padding-box',
+      WebkitAppearance: 'none',
+      appearance: 'none',
+      
       transition: 'all 0.3s ease',
       fontWeight: '500',
-      fontFamily: 'inherit'
+      fontFamily: 'inherit',
+      outline: 'none'
     },
     select: {
       width: '100%',
@@ -257,14 +264,20 @@ function Hero() {
       border: '1px solid rgba(255, 255, 255, 0.25)',
       fontSize: '0.9rem',
       color: '#ffffff',
-      background: 'rgba(255, 255, 255, 0.08)',
-      backdropFilter: 'blur(10px)',
-      WebkitBackdropFilter: 'blur(10px)',
+      
+      // 🔥 CRITICAL FIXES for glassmorphism
+      backgroundColor: 'rgba(255, 255, 255, 0.12)',
+      backdropFilter: 'blur(12px)',
+      WebkitBackdropFilter: 'blur(12px)',
+      backgroundClip: 'padding-box',
+      WebkitAppearance: 'none',
+      appearance: 'none',
+      
       transition: 'all 0.3s ease',
       fontWeight: '500',
       cursor: 'pointer',
-      appearance: 'none',
-      fontFamily: 'inherit'
+      fontFamily: 'inherit',
+      outline: 'none'
     },
     submitBtn: {
       width: '100%',
@@ -351,7 +364,7 @@ function Hero() {
     select:focus {
       outline: none;
       border-color: #ff6b35 !important;
-      background: rgba(255, 255, 255, 0.08) !important;
+      background: rgba(255, 255, 255, 0.18) !important;
     }
 
 
@@ -360,7 +373,6 @@ function Hero() {
       color: #ffffff;
     }
 
-    /* Fix select appearance on different browsers */
     select:invalid {
       color: rgba(255, 255, 255, 0.6);
     }
@@ -479,6 +491,16 @@ function Hero() {
       .contact-box-subtitle {
         font-size: 0.75rem !important;
       }
+
+      /* 🔥 MOBILE SAFARI GLASSMORPHISM FIX */
+      input,
+      select {
+        background-color: rgba(255, 255, 255, 0.12) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
+      }
     }
 
 
@@ -513,6 +535,14 @@ function Hero() {
 
       .hero-contact-box {
         padding: 1.2rem !important;
+      }
+
+      /* 🔥 MOBILE GLASSMORPHISM FIX */
+      input,
+      select {
+        background-color: rgba(255, 255, 255, 0.12) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        backdrop-filter: blur(12px) !important;
       }
     }
   `;
