@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
-import logo from '/swarrnim-logo.png';
 
 
 function Header() {
@@ -72,6 +70,9 @@ function Header() {
       letterSpacing: '0.3px',
       cursor: 'pointer'
     },
+    navLinkHover: {
+      color: '#ff6b35'
+    },
     mobileMenuButton: {
       display: 'none',
       background: 'transparent',
@@ -110,7 +111,7 @@ function Header() {
     },
     mobileMenuHeader: {
       display: 'flex',
-      justifyContent: 'space-between',
+      justifyContent: 'center',
       alignItems: 'center',
       paddingBottom: '1rem',
       borderBottom: '2px solid #e0e0e0'
@@ -119,17 +120,6 @@ function Header() {
       height: '50px',
       width: 'auto',
       objectFit: 'contain'
-    },
-    closeButton: {
-      background: 'transparent',
-      border: 'none',
-      cursor: 'pointer',
-      padding: '0.5rem',
-      color: '#1a1a1a',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      transition: 'transform 0.3s ease'
     },
     mobileNavLink: {
       color: '#333333',
@@ -210,6 +200,7 @@ function Header() {
     }
 
 
+    /* Hamburger to X animation */
     .hamburger-line-1 {
       top: 0;
     }
@@ -242,10 +233,6 @@ function Header() {
       bottom: 50%;
       transform: translateY(50%) rotate(-45deg);
     }
-
-    .close-button:hover {
-      transform: rotate(90deg);
-    }
   `;
 
 
@@ -271,7 +258,7 @@ function Header() {
         <div style={styles.container} className="header-container">
           <div style={styles.logo}>
             <img 
-              src={logo}
+              src="/logo.png" 
               alt="Swarrnim University Logo" 
               style={styles.logoImage}
               className={isScrolled ? 'logo-image logo-image-scrolled' : 'logo-image'}
@@ -279,6 +266,7 @@ function Header() {
           </div>
 
 
+          {/* Desktop Navigation */}
           <nav style={styles.nav} className="header-nav">
             {navLinks.map((link, index) => (
               <a
@@ -299,6 +287,7 @@ function Header() {
           </nav>
 
 
+          {/* Mobile Menu Button - Animated Hamburger */}
           <button 
             style={styles.mobileMenuButton} 
             className={`mobile-menu-button ${isMobileMenuOpen ? 'hamburger-open' : ''}`}
@@ -313,28 +302,22 @@ function Header() {
       </header>
 
 
+      {/* Mobile Menu Overlay */}
       <div 
         style={styles.overlay} 
         onClick={() => setIsMobileMenuOpen(false)}
       />
 
 
+      {/* Mobile Menu */}
       <div style={styles.mobileMenu}>
         <div style={styles.mobileMenuHeader}>
           <img 
-            src={logo}
+            src="/logo.png" 
             alt="Swarrnim University Logo" 
             style={styles.mobileLogoImage}
             className="mobile-logo-image"
           />
-          <button 
-            style={styles.closeButton}
-            className="close-button"
-            onClick={() => setIsMobileMenuOpen(false)}
-            aria-label="Close menu"
-          >
-            <X size={28} />
-          </button>
         </div>
 
 
