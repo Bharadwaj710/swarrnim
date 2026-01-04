@@ -242,10 +242,10 @@ function Hero() {
       width: '100%',
       padding: '0.8rem 0.9rem 0.8rem 2.6rem',
       border: '1px solid rgba(255, 255, 255, 0.25)',
+      borderRadius: '0',
       fontSize: '0.9rem',
       color: '#ffffff',
       
-      // 🔥 THE REAL FIX - transparent background, no blur on input itself
       background: 'transparent',
       backgroundColor: 'transparent',
       
@@ -261,10 +261,10 @@ function Hero() {
       width: '100%',
       padding: '0.8rem 2.6rem 0.8rem 2.6rem',
       border: '1px solid rgba(255, 255, 255, 0.25)',
+      borderRadius: '0',
       fontSize: '0.9rem',
       color: '#ffffff',
       
-      // 🔥 THE REAL FIX - transparent background
       background: 'transparent',
       backgroundColor: 'transparent',
       
@@ -386,6 +386,7 @@ function Hero() {
       background-color: transparent !important;
       -webkit-appearance: none !important;
       appearance: none !important;
+      border-radius: 0 !important;
     }
 
     /* Auto-fill styles for Chrome/Safari */
