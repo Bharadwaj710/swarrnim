@@ -245,11 +245,10 @@ function Hero() {
       fontSize: '0.9rem',
       color: '#ffffff',
       
-      // 🔥 CRITICAL FIXES for glassmorphism
-      backgroundColor: 'rgba(255, 255, 255, 0.12)',
-      backdropFilter: 'blur(12px)',
-      WebkitBackdropFilter: 'blur(12px)',
-      backgroundClip: 'padding-box',
+      // 🔥 THE REAL FIX - transparent background, no blur on input itself
+      background: 'transparent',
+      backgroundColor: 'transparent',
+      
       WebkitAppearance: 'none',
       appearance: 'none',
       
@@ -265,11 +264,10 @@ function Hero() {
       fontSize: '0.9rem',
       color: '#ffffff',
       
-      // 🔥 CRITICAL FIXES for glassmorphism
-      backgroundColor: 'rgba(255, 255, 255, 0.12)',
-      backdropFilter: 'blur(12px)',
-      WebkitBackdropFilter: 'blur(12px)',
-      backgroundClip: 'padding-box',
+      // 🔥 THE REAL FIX - transparent background
+      background: 'transparent',
+      backgroundColor: 'transparent',
+      
       WebkitAppearance: 'none',
       appearance: 'none',
       
@@ -364,7 +362,7 @@ function Hero() {
     select:focus {
       outline: none;
       border-color: #ff6b35 !important;
-      background: rgba(255, 255, 255, 0.18) !important;
+      background: rgba(255, 255, 255, 0.05) !important;
     }
 
 
@@ -379,6 +377,26 @@ function Hero() {
 
     select option:first-child {
       color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Force transparent background on all inputs */
+    input,
+    select {
+      background: transparent !important;
+      background-color: transparent !important;
+      -webkit-appearance: none !important;
+      appearance: none !important;
+    }
+
+    /* Auto-fill styles for Chrome/Safari */
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: #ffffff;
+      transition: background-color 5000s ease-in-out 0s;
+      box-shadow: inset 0 0 20px 20px transparent;
     }
 
 
@@ -491,16 +509,6 @@ function Hero() {
       .contact-box-subtitle {
         font-size: 0.75rem !important;
       }
-
-      /* 🔥 MOBILE SAFARI GLASSMORPHISM FIX */
-      input,
-      select {
-        background-color: rgba(255, 255, 255, 0.12) !important;
-        -webkit-backdrop-filter: blur(12px) !important;
-        backdrop-filter: blur(12px) !important;
-        -webkit-appearance: none !important;
-        appearance: none !important;
-      }
     }
 
 
@@ -535,14 +543,6 @@ function Hero() {
 
       .hero-contact-box {
         padding: 1.2rem !important;
-      }
-
-      /* 🔥 MOBILE GLASSMORPHISM FIX */
-      input,
-      select {
-        background-color: rgba(255, 255, 255, 0.12) !important;
-        -webkit-backdrop-filter: blur(12px) !important;
-        backdrop-filter: blur(12px) !important;
       }
     }
   `;
